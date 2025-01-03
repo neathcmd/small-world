@@ -45,7 +45,8 @@ body {
 }
 
 h1,
-h2 {
+h2,
+h3 {
   color: #000;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
@@ -502,4 +503,39 @@ header.visible {
 .animate-faq.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* supporters */
+#donor-wall {
+  text-align: center;
+  padding: 20px;
+}
+.donor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+.donor-card {
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.donor-card img {
+  cursor: pointer;
+}
+
+.donor-card:hover {
+  transform: scale(1.05);
+  transition: 0.5s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+:root {
+  --header-height: 80px; /* Set this to the actual height of your header */
+}
+
+section {
+  scroll-margin-top: var(--header-height);
 }
