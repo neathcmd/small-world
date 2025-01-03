@@ -200,3 +200,67 @@ document.addEventListener("DOMContentLoaded", () => {
     currentIndex = (currentIndex + 1) % images.length;
   }, 2700);
 });
+
+// Select the FAQ section
+const faqSection = document.querySelector("#faq");
+
+// Create an Intersection Observer
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Add the 'visible' class when in view
+        faqSection.classList.add("visible");
+      } else {
+        // Remove the 'visible' class when out of view (optional)
+        faqSection.classList.remove("visible");
+      }
+    });
+  },
+  { threshold: 0.1 }
+);
+
+// Observe the FAQ section
+observer.observe(faqSection);
+
+// Select the Vision section
+const visionSection = document.querySelector("#vision");
+
+// Create an Intersection Observer to fade in the background
+const visionObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Add the 'visible' class to make the background fade in
+        visionSection.classList.add("visible");
+      } else {
+        // Remove 'visible' when out of view
+        visionSection.classList.remove("visible");
+      }
+    });
+  },
+  { threshold: 0.2 } // Adjust the threshold if needed
+);
+
+// Observe the Vision section
+visionObserver.observe(visionSection);
+
+// Create an Intersection Observer to animate the text when in view
+const textElements = document.querySelectorAll(".text-slide");
+const textObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      } else {
+        entry.target.classList.remove("visible");
+      }
+    });
+  },
+  { threshold: 0.2 }
+);
+
+// Observe all text elements
+textElements.forEach((text) => {
+  textObserver.observe(text);
+});

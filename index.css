@@ -407,6 +407,34 @@ header.visible {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  position: relative;
+  opacity: 0; /* Initially set to 0 */
+  transition: opacity 1s ease; /* Fade-in transition */
+}
+
+#vision.visible {
+  opacity: 1; /* When the section is in view, set opacity to 1 */
+}
+
+.out-mission-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.mission-content {
+  z-index: 1;
+}
+
+.text-slide {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.text-slide.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* trees style section */
@@ -461,4 +489,17 @@ header.visible {
 
 #seeds {
   padding-top: 5%;
+}
+
+/* for FQA */
+.animate-faq {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Animation State */
+.animate-faq.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
