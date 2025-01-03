@@ -7,7 +7,7 @@ navLinks.forEach((link) => {
   });
 });
 
-//donate button
+//donate button in the form
 document.getElementById("donate").addEventListener("click", function (event) {
   event.preventDefault();
 
