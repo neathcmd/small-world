@@ -264,3 +264,24 @@ const textObserver = new IntersectionObserver(
 textElements.forEach((text) => {
   textObserver.observe(text);
 });
+
+//read more button
+document.addEventListener("DOMContentLoaded", () => {
+  // Select all toggle buttons
+  const toggleButtons = document.querySelectorAll(".toggle-content");
+
+  toggleButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const cardBody = button.parentElement;
+      const content = cardBody.querySelector(".card-text");
+
+      if (content.classList.contains("visible-content")) {
+        content.classList.remove("visible-content");
+        button.textContent = "Read More";
+      } else {
+        content.classList.add("visible-content");
+        button.textContent = "Read Less";
+      }
+    });
+  });
+});

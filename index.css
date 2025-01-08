@@ -488,8 +488,103 @@ header.visible {
   padding-top: 9%;
 }
 
+.card img {
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.04);
+  transition: 0.5s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#trees .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#trees .col-md-4 {
+  display: flex;
+  flex-direction: column;
+}
+
+#trees .card {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#trees .card-img-top {
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+#trees .card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hidden-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+}
+
+.visible-content {
+  max-height: 200px; /* Adjust based on content height */
+  opacity: 1;
+}
+
+.toggle-content {
+  margin-top: 10px;
+}
+
 #seeds {
   padding-top: 5%;
+}
+
+/* Parent container */
+#seeds .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Each column behaves as a flex container */
+#seeds .col-md-4 {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Card styling for equal height */
+#seeds .card {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Image styling */
+#seeds .card-img-top {
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+/* Card body */
+#seeds .card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 /* for FQA */
